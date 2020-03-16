@@ -1,0 +1,41 @@
+
+***************************THE PROVIDED GRAMMAR IS ::**************************
+
+				S->aAB|AB|^
+				A->aAb|^
+				B->bBc|AS
+
+************************THE PROVIDED INPUT STRING IS ::************************
+
+				aab$
+
+**************************FIRST OF VARIABLES ARE ::****************************
+
+			    S  =  ['a', '^', 'b']
+			    A  =  ['a', '^']
+			    B  =  ['b', 'a', '^']
+
+*************************FOLLOW OF VARIABLES ARE ::****************************
+
+			    S  =  ['$', 'c']
+			    A  =  ['b', 'a', '$', 'c']
+			    B  =  ['$', 'c']
+
+**************************FIRST OF PRODUCTIONS ARE ::***************************
+
+			    aAB  =  ['a']
+			    AB  =  ['a', 'b', '^']
+			    ^  =  ['^']
+			    aAb  =  ['a']
+			    ^  =  ['^']
+			    bBc  =  ['b']
+			    AS  =  ['a', 'b', '^']
+
+
+
+OOPS:	GRAMMAR IS NOT LL(1)
+
+	(Double ENTRY IN TABLE AT S , a : aAB AND AB )
+
+
+
